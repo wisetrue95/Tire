@@ -18,7 +18,8 @@ and start by reading this [blog post about the balloon color splash sample](http
 
 
 ### 1. Create dataset
-
+Generate data Annotation and save JSON file using VGG Image Annotator, [VIA](https://www.robots.ox.ac.uk/~vgg/software/via/). 
+Each mask is set of polygon points. 
 
 ### 2. Download a preatrained model
 You can download pre-trained COCO weights (mask_rcnn_coco.h5) from the [releases page](https://github.com/matterport/Mask_RCNN/releases).
