@@ -1,0 +1,80 @@
+{
+    "name": "detectTireWear",
+    "n_gpu": 1,
+    "arch": {
+        "type": "3class",
+        "args": {}
+    },
+    "train_data_loader": {
+        "type": "trainDataLoader",
+        "args": {
+            "data_dir": "./dataset/image/train/",
+            "batch_size": 32,
+            "shuffle": true,
+            "num_workers": 4
+        }
+    },
+    "val_data_loader": {
+        "type": "valDataLoader",
+        "args": {
+            "data_dir": "./dataset/image/val/",
+            "batch_size": 1,
+            "shuffle": false,
+            "num_workers": 4
+        }
+    },
+    "attention_data_loader": {
+        "type": "attentionDataLoader",
+        "args": {
+            "data_dir": "./dataset/mask/train/",
+            "batch_size": 32,
+            "shuffle": false,
+            "num_workers": 4
+        }
+    },
+    "attention_val_data_loader": {
+        "type": "attention_valDataLoader",
+        "args": {
+            "data_dir": "./dataset/mask/val/",
+            "batch_size": 1,
+            "shuffle": false,
+            "num_workers": 4
+        }
+    },
+    "test_data_loader": {
+        "type": "testDataLoader",
+        "args": {
+            "data_dir": "./dataset/tread/val/",
+            "batch_size": 108,
+            "shuffle": false,
+            "num_workers": 4
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args": {
+            "lr": 0.0003,
+            "weight_decay" : 1e-5
+        }
+    },
+    "loss": "cross_entropy",
+    "metrics": [
+        "accuracy"
+    ],
+    "lr_scheduler": {
+        "type": "CosineAnnealingLR",
+        "args": {
+            "T_max": 5,
+            "eta_min": 0
+        }
+    },
+    "trainer": {
+        "epochs": 50,
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        "monitor": "max val_accuracy",
+        "early_stop": 10,
+        "tensorboard": true
+    }
+}
