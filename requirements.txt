@@ -1,0 +1,13 @@
+torch==1.8.1 
+torchvision==0.9.1 
+torchaudio==0.8.1
+pandas
+matplotlib
+opencv-python
+scikit-image
+imgaug
+tensorflow-gpu==1.14.0
+keras==2.1.0
+h5py==2.10.0
+ipython
+
