@@ -31,8 +31,12 @@ You can download pre-trained COCO weights (mask_rcnn_coco.h5) from the [releases
 
 ### 3. Train
 ```
-python train.py --command train --weights coco --dataset [path/to/dataset] --image [path/to/image]
+python train.py --command train 
+                --weights coco
+                --dataset [path/to/dataset] 
+                --image [path/to/image]
 ```
+
 
 ### 4. Visualize
 Visualize bounding box and defect masks
@@ -64,7 +68,7 @@ python train.py
 python test.py --resume [path/to/checkpoint]
 ```
 
-### 4. CAM
+### 4. Class Activation Map
 ```
 python cam.py --dataset_path [path/to/dataset] 
               --dataset [path/to/dataset/folder] 
